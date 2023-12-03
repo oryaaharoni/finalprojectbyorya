@@ -1,0 +1,155 @@
+/* .user-list-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.user-entry {
+    margin-bottom: 10px;
+}
+
+.friend-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.friend-button:hover {
+    background-color: #0056b3;
+} */
+
+
+
+
+
+@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
+
+[class*="fontawesome-"]:before {
+  font-family: "FontAwesome", sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1f253d;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+h2 {
+  font-size: 17px;
+}
+
+p {
+  font-size: 15px;
+}
+
+h2,
+p,
+a,
+span {
+  color: #fff;
+}
+.scnd-font-color {
+  color: #9099b7;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.titular {
+  display: block;
+  line-height: 60px;
+  margin: 0;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.main-container {
+  font-family: "Ubuntu", sans-serif;
+  width: 950px;
+  height: 1725px;
+  margin: 6em auto;
+}
+
+/** CONTAINERS **/
+.container {
+  float: left;
+  width: 400px;
+}
+.block {
+  /* margin-bottom: 25px; */
+  background: #394264;
+  border-radius: 5px;
+}
+.left-container {
+    height: 900px;;
+}
+
+/* to the height of the box */
+.menu-box {
+  height:fit-content
+}
+.menu-box .titular {
+  background: #11a8ab;
+}
+.menu-box-menu .icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 28px;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+.menu-box-number {
+  width: 36px;
+  line-height: 22px;
+  background: #50597b;
+  text-align: center;
+  border-radius: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.menu-box-menu li {
+  height: 60px;
+  position: relative;
+}
+.menu-box-tab {
+  line-height: 60px;
+  display: block;
+  border-bottom: 1px solid #1f253d;
+}
+.menu-box-tab:hover {
+  background: #50597b;
+  border-top: 1px solid #1f253d;
+}
+.menu-box-tab:hover .icon {
+  color: #fff;
+}
+
+
+
+
+
+
+

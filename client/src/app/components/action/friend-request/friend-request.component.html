@@ -1,0 +1,49 @@
+<!-- <div class="user-list-container">
+    <h2>User List in site:</h2>
+    <div *ngFor="let user of users">
+        <div class="user-entry" *ngIf="currentUserName !== user.username ">
+            {{ user.username }}
+            <div *ngIf="user.myFriend">
+                <button style="background-color: #a40909;" class="friend-button"
+                    (click)="sendFriendRequest(user.username)"> - </button>
+            </div>
+            <div *ngIf="user.myFriend == false">
+                <button style="background-color: #00631a;" class="friend-button"
+                    (click)="sendFriendRequest(user.username)"> + </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="user-list-container">
+    <h2>User List in site:</h2>
+    <div *ngFor="let id of friendsIds">
+        <div class="user-entry">
+            {{ getFriendById(id) }} <button class="friend-button" (click)="sendFriendRequest(id)"> + </button>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="left-container container">
+    <div class="menu-box block">
+        <h2 class="titular">FRIENDS</h2>
+        <ul class="menu-box-menu" *ngFor="let user of users">
+            <div class="user-entry" *ngIf="currentUserName !== user.username ">
+                <li *ngIf="user.myfriend">
+                    <div class="menu-box-tab" style="color: #fff"><span class="icon fontawesome-envelope scnd-font-color"></span>{{
+                        user.username }}<button class="menu-box-number"style="background-color: #a40909;"
+                        (click)="removeRequest(user.username)">-
+                        </button></div>
+                </li>
+                <li *ngIf="user.myfriend == false">
+                    <div class="menu-box-tab" style="color: #fff"><span class="icon fontawesome-envelope scnd-font-color"></span>{{
+                        user.username }}<button class="menu-box-number"style="background-color: #00631a;"
+                        (click)="sendFriendRequest(user.username)">+
+                        </button></div>
+                </li> 
+            </div>
+        </ul>
+    </div>
+</div>

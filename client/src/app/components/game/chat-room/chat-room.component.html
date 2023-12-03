@@ -1,0 +1,93 @@
+<!-- <div class='container' ng-cloak ng-app="chatApp">
+  <div class='chatbox' ng-controller="MessageCtrl as chatMessage">
+
+    <div class='chatbox__user-list'>
+      <h1>Friends list: </h1> -->
+<!-- <div class="chatbox__user--away">
+        <p>General chat 
+          <button (click)="btnRoomName=false" >Chat</button>
+        </p>
+      </div> -->
+<!-- <div class="{{user.state ? 'chatbox__user--active' : 'chatbox__user--busy'}}" *ngFor="let user of userfriends">
+
+        <p>{{user.username}} , {{user.state ? 'online' : 'offline'}}
+          <button *ngIf="user.state && user.username!== currentUser"
+            (click)="changebtnRoomName(user.username)">play</button>
+        </p>
+      </div>
+    </div>
+    <div *ngIf="btnRoomName==true" style="color: white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+      Enter Room Name:
+      <input type="text" [(ngModel)]="roomname">
+      <button (click)="createNewRoom()">create</button>
+    </div>
+
+    <div *ngIf="btnUsersGame==true">
+      <h2 style="color: red;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Room: {{roomname}}</h2>
+    </div>
+    <div class="chatbox__messages" ng-repeat="message in messages">
+      <div class="chatbox__messages__user-message" *ngFor="let msg of msglist">
+        <div class="chatbox__messages__user-message--ind-message">
+          <p class="name">{{msg.sendername}}</p>
+          <br />
+          <p>{{msg.text}}</p>
+          <p style="font-size: xx-small;">{{msg.date}}</p>
+        </div>
+      </div>
+    </div>
+    <div style="width: 75%;" *ngIf="btnUsersGame==true">
+      <input hidden type="datetime" [(ngModel)]="date">
+      <input type="text" placeholder="Enter your message" [(ngModel)]="message">
+      <button (click)="sendMsg()">Send</button>
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="btnfriends== false">
+  <div class="button-list" *ngFor="let user of userfriends ">
+    <button class="btn" [disabled]="user.state==false" (click)="secondUserName=user.username">
+      <div class=" tier">
+         <div  >
+            <i class="fas fa-check-circle"></i>
+            {{user.username}}
+        </div>
+        <div>
+          <span> {{user.state ? 'online' : 'offline'}}</span>
+          <div class="{{user.state ? 'chatbox__user--active' : 'chatbox__user--busy'}}"> </div>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div class="button-list">
+    <button class="btn buy-now" (click)="getRoomName()">play</button>
+  </div>
+</div>
+
+<div *ngIf="btnEnterRoomName==true" style="font-style: italic;color: white;">
+  Enter Room Name Please:
+  <input type="text" [(ngModel)]="roomname">
+  <button (click)="createNewRoom()">create</button>
+</div>
+<br />
+<div class='container' ng-cloak ng-app="chatApp" *ngIf="btnShowChat==true">
+  <div class='chatbox' ng-controller="MessageCtrl as chatMessage">
+    <div>
+      <h2 style="color: white;font-style: italic;">Room: {{roomname}}</h2>
+    </div>
+    <div class="chatbox__messages" ng-repeat="message in messages">
+      <div class="chatbox__messages__user-message" *ngFor="let msg of msglist">
+        <div class="chatbox__messages__user-message--ind-message">
+          <p class="name">{{msg.sendername}}</p>
+          <br />
+          <p>{{msg.text}}</p>
+          <p style="font-size: xx-small;">{{msg.date}}</p>
+        </div>
+      </div>
+    </div>
+    <div style="width: 75%;" >
+      <input hidden type="datetime" [(ngModel)]="date">
+      <input type="text" placeholder="Enter your message" [(ngModel)]="message">
+      <button (click)="sendMsg()">Send</button>
+    </div>
+  </div>
+</div>

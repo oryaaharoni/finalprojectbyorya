@@ -1,0 +1,96 @@
+<!-- <div style="background-color: black; display: flex; justify-content: center; align-items: center; border-radius: 7px;">
+    <div
+        style="background-color: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 8px; width: 400px; text-align: center;">
+        <h1 style="font-size: 36px; color: white; margin-bottom: 20px;">Register</h1>
+
+        <form name="registerNewUserForm" #registerNewUserForm="ngForm"
+            style="display: flex; flex-direction: column; align-items: center;">
+            <label style="color: white; margin-bottom: 10px;">User Name:</label>
+            <input style="padding: 8px; border: 1px solid white; border-radius: 4px; width: 100%;" type="text"
+                name="username" [(ngModel)]="user.username" required #username="ngModel" minlength="2">
+            <div style="color: white;" *ngIf="username.invalid && username.dirty">Name is required and min length is 2
+            </div>
+
+            <label style="color: white; margin-top: 10px; margin-bottom: 10px;">Password:</label>
+            <input style="padding: 8px; border: 1px solid white; border-radius: 4px; width: 100%;" type="password"
+                name="password" [(ngModel)]="user.password" required #password="ngModel" minlength="5">
+            <div style="color: white;" *ngIf="password.invalid && password.dirty">Password is required and min length is
+                5 </div>
+
+            <label style="color: white; margin-top: 10px; margin-bottom: 10px;">Email:</label>
+            <input style="padding: 8px; border: 1px solid white; border-radius: 4px; width: 100%;" type="email"
+                name="email" [(ngModel)]="user.email" #email="ngModel" minlength="5">
+            <div style="color: white;" *ngIf="email.invalid">Email min length is 5 </div>
+
+            <label style="color: white; margin-top: 10px; margin-bottom: 10px;">Full Name:</label>
+            <input style="padding: 8px; border: 1px solid white; border-radius: 4px; width: 100%;" type="text"
+                name="fullname" [(ngModel)]="user.fullname" #fullname="ngModel" minlength="2">
+            <div style="color: white;" *ngIf="fullname.invalid ">Fullname min length is 2 </div>
+
+            <br />
+            <div style="color: white;" *ngIf="registerNewUserForm.form.invalid && registerNewUserForm.form.dirty">Some
+                fileds are not valid</div>
+
+            <button
+                style="margin-top: 20px; background-color: #007bff; color: white; padding: 8px 20px; border: none; border-radius: 4px; cursor: pointer;"
+                (click)="registerUser()" [disabled]="registerNewUserForm.form.invalid">Submit</button>
+        </form>
+    </div>
+</div> -->
+
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+</head>
+<div class="login-box">
+    <form name="registerNewUserForm" #registerNewUserForm="ngForm">
+        <div class="input-section">
+            <i class="far fa-user"></i>
+            <input class="input-area" type="text" placeholder="Username" name="username" [(ngModel)]="user.username"
+                required #username="ngModel" minlength="2">
+        </div>
+        <div class="question-box">
+            <div class="question" *ngIf="username.invalid && username.dirty">Name is required and min length is 2</div>
+        </div>
+
+        <div class="input-section">
+            <i class="fas fa-lock"></i>
+            <input class="input-area" type="password" placeholder="Password" name="password" [(ngModel)]="user.password"
+                required #password="ngModel" minlength="5">
+        </div>
+        <div class="question-box">
+            <div class="question" *ngIf="password.invalid && password.dirty">Password is required and min length is 5
+            </div>
+        </div>
+
+        <div class="input-section">
+            <i class="far fa-envelope"></i>
+            <input class="input-area" type="text" placeholder="Email" name="email" [(ngModel)]="user.email"
+                #email="ngModel" minlength="5">
+        </div>
+        <div class="question-box">
+            <div class="question" *ngIf="email.invalid">Email min length is 5 </div>
+        </div>
+
+        <div class="input-section">
+            <i class="far fa-user"></i>
+            <input class="input-area" type="text" placeholder="Full Name" name="fullname" [(ngModel)]="user.fullname"
+                #fullname="ngModel" minlength="2">
+        </div>
+        <div class="question-box">
+            <div class="question" *ngIf="fullname.invalid ">Fullname min length is 2 </div>
+        </div>
+
+        <div *ngIf="username.valid&& password.valid&& email.valid && fullname.valid ">
+            <button class="btn" id="login-btn" (click)="registerUser()" >Register</button>
+        </div>
+        <div class="question-box">
+            <p class="question">Already Have Account?</p><a class="reg-btn" [routerLink]="'/login'">Login</a>
+        </div>
+    </form>
+</div>
+<!-- <div class="success-box">
+    <h1>You have been logged in!</h1>
+</div> -->

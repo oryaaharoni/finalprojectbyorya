@@ -1,0 +1,167 @@
+<div *ngIf="diceTemp.value ==1" [ngClass]="{'red-line': focused}">
+    <div class="dice first-face">
+        <span class="dot">
+        </span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp.value==2" [ngClass]="{'red-line': focused}">
+    <div class="dice second-face">
+        <span class="dot">
+        </span>
+        <span class="dot">
+        </span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp.value ==3" [ngClass]="{'red-line': focused}">
+    <div class="dice third-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp.value==4" [ngClass]="{'red-line': focused}">
+    <div class="fourth-face dice">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="diceTemp.value==5" [ngClass]="{'red-line': focused}">
+    <div class="fifth-face dice">
+
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <div class="column">
+            <span class="dot"></span>
+        </div>
+
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div>
+
+<!-- <div *ngIf="diceTemp.value==6" [ngStyle]="{'background-color':diceTemp.used==true ? 'green' : 'red'}"> -->
+
+<div *ngIf="diceTemp.value==6" [ngClass]="{'red-line': focused}">
+    <div class="sixth-face dice">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- 
+<div *ngIf="diceTemp==1">
+    <div class="dice first-face">
+        <span class="dot">
+        </span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp==2">
+    <div class="dice second-face">
+        <span class="dot">
+        </span>
+        <span class="dot">
+        </span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp==3">
+    <div class="dice third-face">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<div *ngIf="diceTemp==4">
+    <div class="fourth-face dice">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="diceTemp==5">
+    <div class="fifth-face dice">
+
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <div class="column">
+            <span class="dot"></span>
+        </div>
+
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div>
+
+
+<div *ngIf="diceTemp==6">
+    <div class="sixth-face dice">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div> -->
+
+<!-- <div *ngIf="dice.value==6">
+    <div class="sixth-face dice">
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="column">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+</div> -->

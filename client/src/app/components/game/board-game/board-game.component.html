@@ -1,0 +1,92 @@
+<div style="background-color: white;color: black;font-size: x-large;">{{currentPlayer}}</div>
+<!-- <button [ngClass]="{'red-button': isRed}" (click)="toggleRed()">Toggle Red</button> -->
+<!-- <div [ngClass]="{'red-button': trowDiceValid}"></div> -->
+<!-- board -->
+<div>
+  <div class="board">
+    <div class="left-bin">
+      <div class="top-row">
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+      </div>
+    </div>
+
+    <!-- beats checkers -->
+    <div style="width: 200px;height: 36px; background-color: rgba(200, 131, 27, 0.685); " *ngFor="let item of beatsCheckers">
+      <ng-container *ngIf="item.elements.length > 0">
+        <ng-container *ngFor="let e of item.elements; let j = index">
+          <div id={{e.id}} *ngIf="item.color=='white'" (click)="moveWhiteBeatElement(e)">
+            <app-checker [myTop]="item.top + 'px'" [myLeft]="item.left+25*j+ 'px'" [myColor]="item.color" [myID]="e">
+            </app-checker>
+          </div>
+
+          <div id={{e.id}} *ngIf="item.color=='black'" (click)="moveBlackBeatElement(e)">
+            <app-checker [myTop]="item.top + 'px'" [myLeft]="item.left+25*j+ 'px'" [myColor]="item.color" [myID]="e">
+            </app-checker>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div class="middle-bar"></div>
+
+    <div class="right-bin">
+      <div class="top-row">
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+        <div class="arrow-down odd"></div>
+        <div class="arrow-down even"></div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+        <div class="arrow-up odd"></div>
+        <div class="arrow-up even"></div>
+      </div>
+    </div>
+   
+    <!-- checker elements move -->
+    <div *ngFor="let item of boardlocation" draggable="true" id="{{item.id}}">
+      <ng-container *ngFor="let e of item.elements; let j = index">
+        <div *ngIf="item.id<13" id={{e.id}} (click)="item.color == 'white' ? moveElementLeft(e) : moveElementRight(e)">
+          <app-checker [myTop]="item.top - j * 36 + 'px'" [myLeft]="item.left + 'px'" [myColor]="item.color" [myID]="e">
+          </app-checker>
+        </div>
+
+        <div *ngIf="item.id>=13" id={{e.id}}
+          (click)="item.color == 'white' ? moveElementLeft(e) : moveElementRight(e)">
+          <app-checker [myTop]="item.top + j * 36 + 'px'" [myLeft]="item.left + 'px'" [myColor]="item.color" [myID]="e">
+          </app-checker>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+<div class="dice-container">
+      <button class="diceBtn" (click)="trowDiceValid ? trowDices() : ''" [disabled]="trowDiceValid==false" [ngStyle]="{'background-color': trowDiceValid ? '#0a415eab' : '#e62c2cab' }">Throw!</button>
+    <div style="display: flex; justify-content: center; gap: 10px;" >
+      <app-dice [diceTemp]="dice1" id="d1" [focused]="existingDice1"></app-dice>
+      <app-dice [diceTemp]="dice2" id="d2" [focused]="existingDice2"></app-dice>
+    </div>
+</div>
+

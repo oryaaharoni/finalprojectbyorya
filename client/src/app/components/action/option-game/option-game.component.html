@@ -1,0 +1,19 @@
+
+<button class="main-button" (click)="btnGameClick()">Start New Game</button>
+<button class="main-button" [routerLink]="'/send-friend-request'">Manage Friends</button>
+
+<div class="button-container" *ngIf="btnGame">
+  <img src="assets/computer1.png" alt="Computer" (click)="goToNextPage('computer')" class="image-button">
+
+  <img src="assets/twoplayers.png" alt="Two Players" (click)="goToNextPage('twoplayers')" class="image-button">
+</div>
+
+
+<div *ngIf="btnfriends== true" style="display: flex; flex-direction:row;">
+  <div>
+    <app-chat-room></app-chat-room>
+  </div>
+  <div>
+    <app-board-game></app-board-game>
+  </div>
+</div>
