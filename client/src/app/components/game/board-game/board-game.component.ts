@@ -1093,9 +1093,9 @@ export class BoardGameComponent {
 
             //check this 
             //מוציא מארבע אם יוצא שש בקוביות והשש עדין מלא
-            // if (location + numDiceTemp!=25){
-            //   console.log("not compare to 25!!", location + numDiceTemp)
-            // }
+            if (location + numDiceTemp!=25){
+              console.log("not compare to 25!!", location + numDiceTemp)
+            }
 
             var lowId = 25;
             console.log('lowId', lowId);
